@@ -11,7 +11,8 @@ import {
   GraduationCap, 
   Mic,
   ChevronRight,
-  Sparkles
+  Sparkles,
+  Building2
 } from 'lucide-react';
 
 const FloatingHelpButton = () => {
@@ -74,6 +75,12 @@ const FloatingHelpButton = () => {
             <button className="popup-option-btn" onClick={() => handleAction('/skills')}>
               <GraduationCap size={16} color="#7012ce" />
               <span>Learn a Skill</span>
+              <ChevronRight size={14} color="#aaa" />
+            </button>
+
+            <button className="popup-option-btn" onClick={() => handleAction('/panchayat')}>
+              <Building2 size={16} color="#7012ce" />
+              <span>Panchayat Staff Kiosk</span>
               <ChevronRight size={14} color="#aaa" />
             </button>
 
