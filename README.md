@@ -1,16 +1,56 @@
-# React + Vite
+# EmpowerHer 🌸
+> **Smart Women Empowerment & Welfare Delivery System**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+EmpowerHer is an integrated digital platform designed to bridge the gap between government welfare schemes, skill training, livelihood opportunities, and grassroots women beneficiaries.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Key Features
 
-## React Compiler
+- **🎯 AI Eligibility Matching Engine:** Automatically calculates eligibility match percentages based on age, income, education, and community category.
+- **📄 Smart Document OCR:** Scans and pre-validates Aadhaar, certificates, and income proofs before submission to minimize rejections.
+- **🎙️ Multilingual Voice Assistant:** Speech-guided navigation and support in regional languages (Tamil, Hindi, English).
+- **📊 Real-time Application Tracker:** Transparent 4-stage tracking (Submitted ➔ OCR Verified ➔ Panchayat Review ➔ Sanctioned).
+- **💼 Livelihood & Skills Hub:** Curated vocational skill courses, micro-finance certifications, and tailored employment listings.
+- **🏛️ Panchayat & CSC Help Center Directory:** Geolocation map and contact details of local Common Service Centers and nodal officers.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📋 Problem Statement
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Government welfare schemes for women are fragmented across disparate portals, gated by complex eligibility requirements, burdened by tedious paperwork, and lack transparent tracking. **EmpowerHer** solves this by unifying scheme discovery, document verification, multi-language voice accessibility, and real-time tracking in a single intuitive interface.
+
+For full details, see [PROBLEM_STATEMENT.md](./PROBLEM_STATEMENT.md).
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React 19, React Router v7, Lucide React Icons
+- **Build Tool:** Vite 8
+- **Styling:** Custom CSS with Glassmorphism & responsive mobile-first architecture
+- **Linting:** ESLint 9
+
+---
+
+## 🚀 Getting Started
+
+### 1. Installation
+```bash
+npm install
+```
+
+### 2. Development Server
+```bash
+npm run dev
+```
+
+### 3. Production Build
+```bash
+npm run build
+```
+
+### 4. Lint Check
+```bash
+npm run lint
+```
