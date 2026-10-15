@@ -154,6 +154,49 @@ const SkillsPage = ({ userName }) => {
             <span className="profit-text">Net Profit: ₹{calculateSellingPrice() - calcCost} / unit</span>
           </div>
         </div>
+
+        {/* Pre-built Home Business Startup Guides */}
+        <h4 style={{ marginTop: '30px', marginBottom: '14px', fontSize: '1.05rem', color: 'var(--text-dark)' }}>
+          🚀 Ready-to-Launch Micro-Business Kits (Costing & Marketing Plans)
+        </h4>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+          <div className="glass-card" style={{ padding: '16px', border: '1px solid #e9ecef', borderRadius: '12px' }}>
+            <h5 style={{ margin: '0 0 6px', color: 'var(--primary)' }}>🧵 Custom Tailoring & Aari Embroidery</h5>
+            <p style={{ fontSize: '0.82rem', color: '#666', marginBottom: '10px' }}>Setup: ₹12,000 (Sewing machine + toolkit) • Margin: 45-50%</p>
+            <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '8px', fontSize: '0.8rem', color: '#444', marginBottom: '10px' }}>
+              <strong>📱 WhatsApp Marketing Template:</strong><br />
+              "🌸 Custom Designer Blouses & Stitching in our village! 48-hr delivery with perfect fit. DM or Call for orders!"
+            </div>
+            <button className="btn btn-outline btn-sm btn-block" onClick={() => alert("Costing sheet & WhatsApp catalogue guide copied!")}>
+              Copy Promotion Template
+            </button>
+          </div>
+
+          <div className="glass-card" style={{ padding: '16px', border: '1px solid #e9ecef', borderRadius: '12px' }}>
+            <h5 style={{ margin: '0 0 6px', color: 'var(--secondary)' }}>🧼 Organic Cold-Pressed Herbal Soaps</h5>
+            <p style={{ fontSize: '0.82rem', color: '#666', marginBottom: '10px' }}>Setup: ₹6,500 (Oils, lye, silicone molds) • Margin: 55%</p>
+            <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '8px', fontSize: '0.8rem', color: '#444', marginBottom: '10px' }}>
+              <strong>📱 WhatsApp Marketing Template:</strong><br />
+              "🌿 100% Chemical-Free Neem & Turmeric Soaps made at home with pure coconut oil. Keep skin glowing naturally! Sample at ₹50."
+            </div>
+            <button className="btn btn-outline btn-sm btn-block" onClick={() => alert("Costing sheet & WhatsApp catalogue guide copied!")}>
+              Copy Promotion Template
+            </button>
+          </div>
+
+          <div className="glass-card" style={{ padding: '16px', border: '1px solid #e9ecef', borderRadius: '12px' }}>
+            <h5 style={{ margin: '0 0 6px', color: '#0ca678' }}>🌾 Millet Health Mix & Value Snacks</h5>
+            <p style={{ fontSize: '0.82rem', color: '#666', marginBottom: '10px' }}>Setup: ₹8,000 (Grains, roasting pans, sealer) • Margin: 35-40%</p>
+            <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '8px', fontSize: '0.8rem', color: '#444', marginBottom: '10px' }}>
+              <strong>📱 WhatsApp Marketing Template:</strong><br />
+              "🌾 Healthy Ragi & Kambu Multigrain Nutri-Mix for kids and elders. Zero preservatives, stone ground. Order your 500g pack today!"
+            </div>
+            <button className="btn btn-outline btn-sm btn-block" onClick={() => alert("Costing sheet & WhatsApp catalogue guide copied!")}>
+              Copy Promotion Template
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Course Detail Modal */}
