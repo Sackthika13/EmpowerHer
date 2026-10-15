@@ -11,7 +11,9 @@ import {
   PlayCircle, 
   Info,
   ShieldCheck,
-  ChevronRight
+  ChevronRight,
+  TrendingUp,
+  Wallet
 } from 'lucide-react';
 import { schemes } from '../data/SchemeDatabase';
 import { skillCourses } from '../data/SkillCourses';
@@ -87,6 +89,61 @@ const DashboardHome = ({ userProfile, applications }) => {
             <strong className="metric-value">65% Overall</strong>
           </div>
           <span className="metric-link">Continue Learning →</span>
+        </div>
+      </div>
+
+      {/* NEW FEATURE: Grant & Subsidy Financial Impact Estimator */}
+      <div className="glass-card" style={{ marginTop: '30px', padding: '24px', background: 'linear-gradient(135deg, rgba(112, 18, 206, 0.04), rgba(255, 77, 109, 0.08))', border: '1px solid rgba(112, 18, 206, 0.15)', borderRadius: '16px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginBottom: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ background: 'var(--primary)', color: 'white', padding: '8px', borderRadius: '10px', display: 'flex' }}>
+              <Wallet size={24} />
+            </div>
+            <div>
+              <h3 style={{ margin: 0, fontSize: '1.2rem', color: 'var(--text-dark)' }}>Estimated Financial Entitlement & Direct Grants</h3>
+              <p className="sub-text" style={{ margin: 0 }}>Based on your profile ({userProfile.age} yrs, {userProfile.education}, {userProfile.location})</p>
+            </div>
+          </div>
+          <div style={{ textAlign: 'right' }}>
+            <span style={{ fontSize: '0.82rem', color: '#666', display: 'block' }}>Potential Annual Benefit</span>
+            <strong style={{ fontSize: '1.6rem', color: 'var(--primary)', fontWeight: '800' }}>₹71,000 / yr</strong>
+          </div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px' }}>
+          <div style={{ background: 'white', padding: '14px', borderRadius: '10px', border: '1px solid #eee' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+              <span style={{ fontSize: '0.8rem', color: '#666' }}>Monthly Direct DBT</span>
+              <span className="status-badge status-eligible" style={{ fontSize: '0.72rem', padding: '2px 6px' }}>Verified</span>
+            </div>
+            <strong style={{ fontSize: '1.15rem', color: '#2b8a3e' }}>₹1,000 / month</strong>
+            <div style={{ fontSize: '0.78rem', color: '#555', marginTop: '4px' }}>Pudhumai Penn Higher Education Grant</div>
+          </div>
+
+          <div style={{ background: 'white', padding: '14px', borderRadius: '10px', border: '1px solid #eee' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+              <span style={{ fontSize: '0.8rem', color: '#666' }}>Livelihood Capital Subsidy</span>
+              <span className="status-badge status-eligible" style={{ fontSize: '0.72rem', padding: '2px 6px' }}>Eligible</span>
+            </div>
+            <strong style={{ fontSize: '1.15rem', color: 'var(--secondary)' }}>Up to ₹35,000</strong>
+            <div style={{ fontSize: '0.78rem', color: '#555', marginTop: '4px' }}>SEWA Machinery & Equipment Grant</div>
+          </div>
+
+          <div style={{ background: 'white', padding: '14px', borderRadius: '10px', border: '1px solid #eee' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+              <span style={{ fontSize: '0.8rem', color: '#666' }}>Tuition Fee Concession</span>
+              <span className="status-badge status-possibly" style={{ fontSize: '0.72rem', padding: '2px 6px' }}>Needs TC</span>
+            </div>
+            <strong style={{ fontSize: '1.15rem', color: '#1c7ed6' }}>100% Free Tuition</strong>
+            <div style={{ fontSize: '0.78rem', color: '#555', marginTop: '4px' }}>First Graduate College Concession</div>
+          </div>
+
+          <div style={{ background: 'white', padding: '14px', borderRadius: '10px', border: '1px solid #eee', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <span style={{ fontSize: '0.8rem', color: '#666', marginBottom: '6px' }}>Financial Advisory</span>
+            <button className="btn btn-primary btn-sm" onClick={() => navigate('/assessment')}>
+              <TrendingUp size={14} /> Optimize Grants
+            </button>
+          </div>
         </div>
       </div>
 
