@@ -1,0 +1,104 @@
+/* Scoped to .eh-elig so it cannot clash with the rest of the app.
+   Override the variables below to match the main EmpowerHer theme. */
+.eh-elig {
+  --eh-ink: #2b1b2e;
+  --eh-muted: #6b5a6e;
+  --eh-paper: #fbf7f9;
+  --eh-card: #ffffff;
+  --eh-line: #e6dbe4;
+  --eh-brand: #8a2d5c;
+  --eh-brand-dark: #6c2048;
+  --eh-ok: #1b7a55;
+  --eh-warn: #a8620d;
+  --eh-bad: #b3342f;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  color: var(--eh-ink);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Tamil', 'Noto Sans Devanagari', sans-serif;
+  line-height: 1.55;
+}
+.eh-elig *, .eh-elig *::before, .eh-elig *::after { box-sizing: border-box; }
+
+.eh-elig .eh-head h1 { font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.2; margin: 0 0 8px; }
+.eh-elig .eh-head p { margin: 0; color: var(--eh-muted); max-width: 60ch; }
+
+.eh-elig .eh-layout { display: grid; gap: 28px; margin-top: 28px; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 880px) { .eh-elig .eh-layout { grid-template-columns: 320px 1fr; } }
+
+/* Form */
+.eh-elig .eh-form {
+  background: var(--eh-card); border: 1px solid var(--eh-line); border-radius: 14px;
+  padding: 20px; display: grid; gap: 16px;
+}
+@media (min-width: 880px) { .eh-elig .eh-form { position: sticky; top: 16px; } }
+.eh-elig .eh-field { display: grid; gap: 6px; }
+.eh-elig .eh-field label { font-weight: 600; font-size: 0.95rem; }
+.eh-elig input[type='number'], .eh-elig select {
+  width: 100%; min-height: 44px; padding: 8px 12px; font: inherit; color: inherit;
+  background: #fff; border: 1.5px solid var(--eh-line); border-radius: 8px;
+}
+.eh-elig input[aria-invalid='true'], .eh-elig select[aria-invalid='true'] { border-color: var(--eh-bad); }
+.eh-elig .eh-hint { font-size: 0.82rem; color: var(--eh-muted); }
+.eh-elig .eh-error { font-size: 0.85rem; color: var(--eh-bad); }
+.eh-elig .eh-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.eh-elig button { font: inherit; min-height: 44px; padding: 0 18px; border-radius: 8px; cursor: pointer; }
+.eh-elig .eh-primary { background: var(--eh-brand); color: #fff; border: 0; font-weight: 600; flex: 1; }
+.eh-elig .eh-primary:hover { background: var(--eh-brand-dark); }
+.eh-elig .eh-secondary { background: transparent; color: var(--eh-brand); border: 1.5px solid var(--eh-brand); }
+
+.eh-elig :is(input, select, button, a, summary):focus-visible { outline: 3px solid #e9a8c6; outline-offset: 2px; }
+
+/* Results */
+.eh-elig .eh-results h2 { font-size: 1.25rem; margin: 28px 0 10px; }
+.eh-elig .eh-results > h2:first-of-type, .eh-elig .eh-disclaimer + h2 { margin-top: 20px; }
+.eh-elig .eh-sub { margin: -4px 0 12px; color: var(--eh-muted); font-size: 0.92rem; }
+.eh-elig .eh-empty { border: 1.5px dashed var(--eh-line); border-radius: 14px; padding: 40px 24px; color: var(--eh-muted); text-align: center; }
+.eh-elig .eh-disclaimer {
+  display: flex; gap: 10px; align-items: flex-start; margin: 0;
+  background: #fff6e5; border: 1px solid #f0d9a8; border-radius: 10px; padding: 12px 14px; font-size: 0.9rem;
+}
+.eh-elig .eh-disclaimer svg { flex: none; margin-top: 3px; color: var(--eh-warn); }
+
+.eh-elig .eh-card { background: var(--eh-card); border: 1px solid var(--eh-line); border-left-width: 5px; border-radius: 12px; margin-bottom: 12px; }
+.eh-elig .eh-eligible { border-left-color: var(--eh-ok); }
+.eh-elig .eh-almost { border-left-color: var(--eh-warn); }
+.eh-elig .eh-no { border-left-color: #c9bcc7; }
+.eh-elig .eh-card summary {
+  list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; gap: 8px 12px;
+  justify-content: space-between; align-items: center; padding: 14px 16px;
+}
+.eh-elig .eh-card summary::-webkit-details-marker { display: none; }
+.eh-elig .eh-card-title { display: grid; }
+.eh-elig .eh-card-title small { color: var(--eh-muted); }
+.eh-elig .eh-badge { font-size: 0.82rem; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #f0e8ee; }
+.eh-elig .eh-eligible .eh-badge { background: #def3ea; color: #115a3d; }
+.eh-elig .eh-almost .eh-badge { background: #fbe9d0; color: #7a4608; }
+.eh-elig .eh-card-body { padding: 0 16px 16px; border-top: 1px solid var(--eh-line); }
+.eh-elig .eh-card-body h4 { margin: 16px 0 6px; font-size: 0.95rem; }
+.eh-elig .eh-benefit { margin: 14px 0 0; }
+.eh-elig .eh-reasons, .eh-elig .eh-docs { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.eh-elig .eh-reasons li { display: flex; gap: 8px; align-items: flex-start; }
+.eh-elig .eh-reasons svg { flex: none; margin-top: 4px; }
+.eh-elig .eh-ok { color: var(--eh-ok); }
+.eh-elig .eh-bad { color: var(--eh-bad); }
+.eh-elig .eh-docs { font-size: 0.93rem; }
+.eh-elig .eh-docs span { color: var(--eh-muted); }
+.eh-elig .eh-note { display: flex; gap: 6px; align-items: flex-start; color: var(--eh-muted); font-size: 0.88rem; margin: 14px 0 0; }
+.eh-elig .eh-note svg { flex: none; margin-top: 3px; }
+.eh-elig .eh-portal { display: inline-flex; gap: 6px; align-items: center; margin-top: 14px; color: var(--eh-brand); font-weight: 600; }
+
+/* Document checklist */
+.eh-elig .eh-checklist { background: var(--eh-card); border: 1px solid var(--eh-line); border-radius: 14px; padding: 4px 18px 14px; margin-top: 28px; }
+.eh-elig .eh-checklist ul { list-style: none; margin: 0; padding: 0; }
+.eh-elig .eh-checklist li { border-top: 1px solid var(--eh-line); }
+.eh-elig .eh-checklist li:first-child { border-top: 0; }
+.eh-elig .eh-checklist label { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; cursor: pointer; min-height: 44px; }
+.eh-elig .eh-checklist input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--eh-ok); flex: none; }
+.eh-elig .eh-checklist small { display: block; color: var(--eh-muted); }
+.eh-elig .eh-checklist input:checked + span strong { text-decoration: line-through; color: var(--eh-muted); }
+
+.eh-elig .eh-others { margin-top: 28px; }
+.eh-elig .eh-others > summary { cursor: pointer; font-weight: 600; margin-bottom: 12px; }
+
+@media (prefers-reduced-motion: reduce) { .eh-elig * { transition: none !important; animation: none !important; } }
