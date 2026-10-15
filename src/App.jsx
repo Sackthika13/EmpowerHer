@@ -18,11 +18,14 @@ import HelpCentersPage from './pages/HelpCentersPage';
 import VoiceAssistantPage from './pages/VoiceAssistantPage';
 import NotificationsPage from './pages/NotificationsPage';
 import SettingsPage from './pages/SettingsPage';
+import PanchayatPage from './pages/PanchayatPage';
 
 import FloatingHelpButton from './components/FloatingHelpButton';
 
 const App = () => {
   const [lang, setLang] = useState('en');
+  const [isOffline, setIsOffline] = useState(false);
+  const [offlineQueue, setOfflineQueue] = useState([]);
 
   // Demo User State
   const [userProfile, setUserProfile] = useState({
@@ -81,6 +84,23 @@ const App = () => {
   ]);
 
   const handleAddApplication = (newApp) => {
+    if (isOffline) {
+      setOfflineQueue(prev => [newApp, ...prev]);
+      setNotifications(prev => [
+        {
+          id: Date.now(),
+          type: "update",
+          title: `Application ${newApp.appId} Stored in Offline Queue`,
+          message: `Application for ${newApp.schemeTitle} saved locally on device. Will auto-sync when online.`,
+          time: "Just now",
+          read: false
+        },
+        ...prev
+      ]);
+      alert(`Rural Offline Mode: Application ${newApp.appId} saved to local device cache! It will sync when internet is connected.`);
+      return;
+    }
+
     setApplications(prev => [newApp, ...prev]);
     setNotifications(prev => [
       {
@@ -93,6 +113,25 @@ const App = () => {
       },
       ...prev
     ]);
+  };
+
+  const handleSyncNow = () => {
+    if (offlineQueue.length === 0) return;
+    setApplications(prev => [...offlineQueue, ...prev]);
+    const syncedCount = offlineQueue.length;
+    setOfflineQueue([]);
+    setNotifications(prev => [
+      {
+        id: Date.now(),
+        type: "update",
+        title: `Synced ${syncedCount} Offline Submissions`,
+        message: "All queued offline submissions have been synchronized with the Central Welfare Portal.",
+        time: "Just now",
+        read: false
+      },
+      ...prev
+    ]);
+    alert(`Successfully synchronized ${syncedCount} applications with Central Welfare Database!`);
   };
 
   return (
@@ -122,6 +161,10 @@ const App = () => {
                 setLang={setLang}
                 notifications={notifications}
                 onLogout={() => {}}
+                isOffline={isOffline}
+                setIsOffline={setIsOffline}
+                offlineQueueCount={offlineQueue.length}
+                onSyncNow={handleSyncNow}
               />
             }
           >
@@ -157,6 +200,10 @@ const App = () => {
             <Route 
               path="/tracker" 
               element={<TrackerPage applications={applications} />} 
+            />
+            <Route 
+              path="/panchayat" 
+              element={<PanchayatPage onAddApplication={handleAddApplication} />} 
             />
             <Route path="/help-centers" element={<HelpCentersPage />} />
             <Route 
